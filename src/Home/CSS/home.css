@@ -100,6 +100,63 @@
     background-color: white;
 }
 
+/* Frosted Glass Overlay */
+.frosted-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 85%;
+    height: 90%;
+    background: rgba(187, 187, 187, 0.3);
+  
+    backdrop-filter: blur(15px);
+    color: #252525;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(-20px);
+    animation-duration: 0.4s;
+    animation-timing-function: ease-in-out;
+  }
+  
+  /* Fade-in upwards animation */
+  .frosted-overlay.fadeInUp {
+    animation-name: fadeInUp;
+  }
+  
+  /* Fade-out downwards animation */
+  .frosted-overlay.fadeOutDown {
+    animation-name: fadeOutDown;
+  }
+  
+  /* Keyframes for fadeInUp effect */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Keyframes for fadeOutDown effect */
+  @keyframes fadeOutDown {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
 /* Right-angle triangle at the top-left */
 .triangle-wrapper {
     position: absolute;

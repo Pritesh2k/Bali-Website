@@ -2,7 +2,7 @@ import React from 'react';
 import '../CSS/home.css';
 
 function openLink() {
-    window.open('https://google.com', '_blank');
+    window.open('https://master.d1miri9ffluv3o.amplifyapp.com/', '_blank');
   }
 
 function Home() {

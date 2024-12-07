@@ -10,6 +10,19 @@
     height: 100dvh;
 }
 
+.home-wrapper .main-line {
+    height: 1px;
+    width: 0%;
+    border-radius: 10%;
+    background-color: #002fff;
+
+    /* Neon glow effect */
+    box-shadow: 0 0 8px #002fff, 0 0 16px #002fff, 0 0 20px #002fff, 0 0 32px #002fff;
+
+    animation: extend 2s ease-in-out forwards; /* Pulsing gradient effect */
+    animation-delay: 1.25s;
+}
+
 .home-wrapper .title {
     display: flex;
     justify-content: center;
@@ -51,6 +64,121 @@
     -webkit-text-fill-color: transparent;
 
     animation: fadeIn 1s ease-in; /* Smooth fade-in for text */
+}
+
+/* Right-angle triangle at the top-left */
+.triangle-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+
+    /* Adding gradient transition effect */
+    border-top: 150px solid transparent;
+    border-right: 150px solid transparent;
+    background: linear-gradient(to right, #7b1fa2, #1a76d2);
+}
+
+.custom-button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    gap: 4px;
+
+    position: absolute;
+    top: -130px; /* Adjust to fit inside the triangle */
+    left: 20px; /* Adjust to fit inside the triangle */
+    z-index: 1; /* Keep above the triangle */
+    transform: rotate(180deg); /* Rotate the button */
+}
+
+/* Text that appears at the top center when hovering over the button */
+.hover-text {
+    position: fixed;
+    top: 30px;
+    left: 12%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: #6e2c2c;
+    background: rgba(0, 0, 0, 0);
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none; /* Prevent interference with hover */
+    transition: opacity 0.3s ease-in-out; /* Smooth fade effect */
+  }
+  
+  /* When user hovers over the button, show the text */
+  .custom-button:hover + .hover-text {
+    opacity: 1;
+  }
+
+.round {
+    width: 6px;
+    height: 6px;
+    background: #3da9fc; /* Keep the original animation effect */
+    border: 0.2px solid rgba(0, 0, 0, 0.158); /* Add a 1px solid black outline */
+    border-radius: 50%;
+}
+
+.custom-button:hover .round {
+    animation: pulseGradient 2s infinite ease-in-out;
+}
+
+.line {
+    display: flex;
+    gap: 4px;
+}
+.line.two {
+    transform: translateX(10px);
+}
+.line.three {
+    transform: translateX(20px);
+}
+.line.four {
+    transform: translateX(30px);
+}
+.line.five {
+    transform: translateX(20px);
+}
+.line.six {
+    transform: translateX(10px);
+}
+
+/* Staggered delay for each child circle to create a flowing effect */
+.line .round:nth-child(1) {
+    animation-delay: 0s;
+  }
+.line .round:nth-child(2) {
+animation-delay: 0.1s;
+}
+.line .round:nth-child(3) {
+animation-delay: 0.2s;
+}
+.line .round:nth-child(4) {
+animation-delay: 0.3s;
+}
+.line .round:nth-child(5) {
+animation-delay: 0.4s;
+}
+.line .round:nth-child(6) {
+animation-delay: 0.5s;
+}
+
+@keyframes pulseGradient {
+    0% {
+        background: #9b5fff; /* Purple */
+    }
+    50% {
+        background: #00ff80; /* Green */
+    }
+    100% {
+        background: #3da9fc; /* Blue */
+    }
 }
 
 /* Keyframes for bounce effect */
@@ -97,5 +225,14 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes extend {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 40%;
     }
 }

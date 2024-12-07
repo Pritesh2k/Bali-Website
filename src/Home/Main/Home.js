@@ -57,6 +57,12 @@ function Home() {
             <div class="hover-text"><i>Back to Portfolio 1.0?</i></div>
         </div>
 
+        <a className='menu'>
+            <div className='ham-line top'></div>
+            <div className='ham-line mid'></div>
+            <div className='ham-line bottom'></div>
+        </a>
+
         <div className='title'>
             <h1>Portfolio</h1>
         </div>

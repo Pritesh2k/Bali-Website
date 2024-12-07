@@ -66,6 +66,40 @@
     animation: fadeIn 1s ease-in; /* Smooth fade-in for text */
 }
 
+.home-wrapper .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 50px;
+    height: 50px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    border-radius: 50%;
+    gap: 5px;
+    opacity: 0;
+
+    background-color: #a200ff;
+    animation: enter-menu 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+.home-wrapper .menu:hover{
+    transition: 0.25s ease-in-out;
+    background-color: #7000b1;
+}
+
+.home-wrapper .menu .ham-line{
+    width: 20px;
+    height: 2px;
+    border-radius: 10%;
+    background-color: white;
+}
+
 /* Right-angle triangle at the top-left */
 .triangle-wrapper {
     position: absolute;
@@ -73,11 +107,15 @@
     left: 0;
     width: 0;
     height: 0;
+    opacity: 0;
 
     /* Adding gradient transition effect */
     border-top: 150px solid transparent;
     border-right: 150px solid transparent;
     background: linear-gradient(to right, #7b1fa2, #1a76d2);
+
+    animation: enter-menu 1s ease-in-out forwards;
+    animation-delay: 2s;
 }
 
 .custom-button {
@@ -167,6 +205,16 @@ animation-delay: 0.4s;
 }
 .line .round:nth-child(6) {
 animation-delay: 0.5s;
+}
+
+@keyframes enter-menu {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes pulseGradient {

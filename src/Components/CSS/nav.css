@@ -10,7 +10,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     
-    background-color: rgba(255, 255, 255, 0.6); /* Semi-transparent background */
+    background-color: rgba(255, 115, 0, 0.6); /* Semi-transparent background */
     border-radius: 10px;
     border: 2px solid gray;
     
@@ -88,19 +88,19 @@
 
 /* Add unique colors for each li underline */
 .Nav-List li:nth-child(1):hover::after {
-    background-color: #ff5100; /* Red */
+    background-color: #0077ff; /* Red */
 }
 
 .Nav-List li:nth-child(2):hover::after {
-    background-color: #ff5100; /* Green */
+    background-color: #0077ff; /* Green */
 }
 
 .Nav-List li:nth-child(3):hover::after {
-    background-color: #ff5100; /* Blue */
+    background-color: #0077ff; /* Blue */
 }
 
 .Nav-List li:nth-child(4):hover::after {
-    background-color: #ff5100; /* Yellow */
+    background-color: #0077ff; /* Yellow */
 }
 
 /* For the first item (left to right animation) */

@@ -75,6 +75,7 @@ function Hero() {
                     <div class="chevron"></div>
                     <div class="chevron"></div>
                 </div>
+                <a href="https://master.d1miri9ffluv3o.amplifyapp.com/" target="_blank">Visit Portfolio 1.0</a>
             </div>
         </div>
     );

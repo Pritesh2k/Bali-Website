@@ -25,6 +25,9 @@ function Nav() {
         <li onClick={() => scrollToSection('section-2')}>Skills</li>
         <li onClick={() => scrollToSection('section-3')}>Projects</li>
         <li onClick={() => scrollToSection('section-4')}>Contact</li>
+        <li className='link-to-port'>
+          <a href="https://master.d1miri9ffluv3o.amplifyapp.com/" target="_blank" rel="noopener noreferrer">1.0</a>
+        </li>
       </ul>
       <a onClick={handleNavToggle} className={isNavVisible ? '' : 'rotated'}>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

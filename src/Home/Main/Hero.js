@@ -58,6 +58,17 @@ function Hero() {
         });
     }, []);
 
+    // Function to scroll to a specific section
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+        }
+    };
+
     return (
         <div className='hero-container'>
             <div className='quad-BL'>
@@ -69,14 +80,14 @@ function Hero() {
                 <h2>नमस्ते</h2>
                 <h2>привет</h2>
                 <h2>مرحبًا</h2>
-                <div className='made-by'>ℳ𝒶𝒹ℯ 𝒷𝓎 𝒫𝓇𝒾𝓉ℯ𝓈𝒽</div>
-                <div class="container">
-                    <div class="chevron"></div>
-                    <div class="chevron"></div>
-                    <div class="chevron"></div>
+                <div className="container">
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
+                    <div className="chevron"></div>
                 </div>
-                <a href="https://master.d1miri9ffluv3o.amplifyapp.com/" target="_blank">Visit Portfolio 1.0</a>
+                <a className='made-by' onClick={() => scrollToSection('section-2')}>Next</a> {/* Scroll to section-2 */}
             </div>
+
         </div>
     );
 }

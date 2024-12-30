@@ -134,3 +134,8 @@
     margin-bottom: -1.5rem; /* Optional: adds some spacing from the bottom */
     margin-right: -1.5rem; /* Optional: adds some spacing from the right */
 }
+
+.link-to-port a{
+    color: rgb(116, 23, 0);
+    text-decoration: none;
+}

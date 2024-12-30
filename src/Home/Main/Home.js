@@ -3,6 +3,7 @@ import '../CSS/home.css';
 
 import Nav from '../../Components/Nav';
 import Hero from './Hero';
+import Skills from './Skills';
 
 function Home() {
   return (
@@ -13,7 +14,7 @@ function Home() {
           <Hero/>
         </section>
         <section className='section section-2' id='section-2'>
-          <h1>Section 2</h1>
+          <Skills/>
         </section>
         <section className='section section-3' id='section-3'>
           <h1>Section 3</h1>

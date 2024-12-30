@@ -23,17 +23,33 @@
   .section-1 {
     background-color: #ffffff; /* Tomato */
   }
+
+  .section-1 h1{
+    color: #ff4929;
+  }
   
   .section-2 {
     background-color: #f7f7f7; /* Medium Sea Green */
+  }
+
+  .section-2 h1{
+    color: #32CD32;
   }
   
   .section-3 {
     background-color: #ffffff; /* Dodger Blue */
   }
+
+  .section-3 h1{
+    color: #1E90FF;
+  }
   
   .section-4 {
     background-color: #f7f7f7; /* Medium Purple */
+  }
+
+  .section-4 h1{
+    color: #FFD700;
   }
   
   /* Smooth scrolling */

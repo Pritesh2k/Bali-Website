@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import '../Components/CSS/nav.css';
 
 function Nav() {
-  const [isNavVisible, setIsNavVisible] = useState(true); // Manage visibility state
+  const [isNavVisible, setIsNavVisible] = useState(false); // Manage visibility state
 
   const handleNavToggle = () => {
     setIsNavVisible(!isNavVisible); // Toggle nav visibility

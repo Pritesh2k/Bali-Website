@@ -2,6 +2,7 @@ import React from 'react';
 import '../CSS/home.css';
 
 import Nav from '../../Components/Nav';
+import Hero from './Hero';
 
 function Home() {
   return (
@@ -9,7 +10,7 @@ function Home() {
       <Nav />
       <div className='sections-container'>
         <section className='section section-1' id='section-1'>
-          <h1>Section 1</h1>
+          <Hero/>
         </section>
         <section className='section section-2' id='section-2'>
           <h1>Section 2</h1>

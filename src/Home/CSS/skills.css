@@ -1,0 +1,149 @@
+.skills-container {
+    width: 100dvw;
+    height: 100dvh; /* Adjust height as needed */
+    overflow: hidden;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .skills-container .banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10%; /* Set the width to 100% to be responsive */
+    height: 20dvh; /* Adjust height as needed */
+    background-color: rgb(39, 39, 39);
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .banner h1 {
+    color: #ffffff;
+    font-size: 2.5rem; /* Adjust size as needed */
+    margin: 0;
+  }
+  
+  .carousel-container {
+    width: 80%; /* Adjusted for better responsiveness */
+    overflow: hidden;
+    position: absolute;
+    margin-bottom: -50rem;
+  }
+  
+  .carousel {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .carousel-item {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carousel-item h2 {
+    font-size: 1.5rem;
+    color: rgb(255, 149, 63);
+  }
+  
+  /* Infinite scroll animation */
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%); /* Start the carousel offscreen */
+    }
+    100% {
+      transform: translateX(-100%); /* Scroll all the way to the left */
+    }
+  }
+  
+  /* Duplicate items to create seamless infinite loop */
+  .carousel-container .carousel {
+    display: flex;
+    white-space: nowrap;
+  }
+  
+  .carousel-container .carousel .carousel-item {
+    flex: 0 0 auto;
+    margin-right: 2rem;
+  }
+  
+  /* Duplicate the skills by replicating them */
+  .carousel-container .carousel .carousel-item:nth-child(odd) {
+    animation-delay: -10s; /* Offset the second group to start right away */
+  }
+
+  .left-skill{
+    width: inherit;
+    height: 5%;
+    font-size: 2rem;
+    position: absolute;
+    margin-right: 17rem;
+    font-weight: 600;
+    transform: rotate(-90deg);
+  }
+
+  .left-skill:hover{
+    transition: 0.25s ease-in-out;
+    color: red;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+
+  .right-skill{
+    width: inherit;
+    height: 5%;
+    font-size: 2rem;
+    position: absolute;
+    margin-left: 17rem;
+    font-weight: 600;
+    transform: rotate(90deg);
+  }
+
+  .right-skill:hover{
+    transition: 0.25s ease-in-out;
+    color: rgb(0, 102, 255);
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+
+  .up-skill{
+    width: inherit;
+    height: 5%;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: -17rem;
+    font-weight: 600;
+  }
+
+  .up-skill:hover{
+    transition: 0.25s ease-in-out;
+    color: rgb(0, 145, 48);
+    cursor: pointer;
+  }
+  
+  .down-skill{
+    width: inherit;
+    height: 5%;
+    font-size: 2rem;
+    position: absolute;
+    margin-top: 17rem;
+    font-weight: 600;
+  }
+
+  .down-skill:hover{
+    transition: 0.25s ease-in-out;
+    color: rgb(255, 145, 0);
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+  }
+  

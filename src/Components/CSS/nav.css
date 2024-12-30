@@ -1,0 +1,81 @@
+.Nav-Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100dvw;
+    height: 10dvh;
+
+    background-color: rgb(82, 3, 184);
+
+    /* Add inverted shadow on top and bottom */
+    box-shadow: 0 4px 6px rgb(119, 0, 255) inset, 0 -4px 6px rgb(119, 0, 255) inset;
+}
+
+.Nav-Container .Nav-List {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+    gap: 5rem;
+
+    color: white;
+}
+
+.Nav-Container .Nav-List li {
+    font-size: 1.5rem;
+    font-weight: bold;
+    position: relative;
+    cursor: pointer;
+
+    /* Smooth transition for hover effect */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.Nav-Container .Nav-List li:hover {
+    transform: scale(1.2);
+    /* Scale up the item */
+    color: rgb(255, 255, 255);
+    /* Change color for better contrast */
+}
+
+/* Add a subtle underline animation starting from the middle */
+.Nav-Container .Nav-List li::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: white;
+
+    /* Set transform-origin to center for expansion */
+    transform-origin: center;
+    transition: width 0.3s ease, transform-origin 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.Nav-Container .Nav-List li:hover::after {
+    width: 100%;
+    /* Expand underline from center */
+}
+
+/* Special styling for the rightmost element */
+.Nav-Container .Nav-List li:last-child::after {
+    left: auto;
+    /* Override left positioning */
+    right: 0;
+    transform: none;
+    /* No translation needed */
+    transform-origin: right;
+    /* Expand from right to left */
+}
+
+.Nav-Container .Nav-List li:last-child:hover::after {
+    width: 100%;
+    /* Expand underline from right */
+}

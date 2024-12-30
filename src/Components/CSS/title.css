@@ -1,0 +1,45 @@
+/* Import your variable font */
+/* TITLE */
+@font-face {
+    font-family: 'TheFont';
+    src: url("https://garet.typeforward.com/assets/fonts/shared/TFMixVF.woff2") format('woff2');
+}
+
+.breathe-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 15vh;
+    width: 30vw;
+}
+
+.breathe-animation span {
+    font-family: 'TheFont';
+
+    /* Dynamic font size for responsiveness */
+    font-size: clamp(1vw, 5vw, 7vh);
+
+    /* White text */
+    color: rgb(240, 156, 0);
+
+    /* Center text */
+    text-align: center;
+
+    /* Breathe animation effect */
+    animation: letter-breathe 5s ease-in-out infinite;
+}
+
+@keyframes letter-breathe {
+    from,
+    to {
+        /* Starting weight; adjust for your font */
+        font-variation-settings: 'wght' 100;
+    }
+
+    50% {
+        /* Maximum weight during animation */
+        font-variation-settings: 'wght' 900;
+    }
+}
+/* TITLE */

@@ -2,49 +2,72 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    width: 100dvw;
+    position: fixed;
+    width: 30dvw;
     height: 10dvh;
-
-    background-color: rgb(82, 3, 184);
-
-    /* Add inverted shadow on top and bottom */
-    box-shadow: 0 4px 6px rgb(119, 0, 255) inset, 0 -4px 6px rgb(119, 0, 255) inset;
+    margin-top: 1rem;
+    
+    background-color: rgba(82, 3, 184, 0.6); /* Semi-transparent background */
+    border-radius: 10px;
+    border: 2px solid gray;
+    
+    /* Frosted glass effect */
+    backdrop-filter: blur(10px); /* Applies blur to the background */
+    -webkit-backdrop-filter: blur(10px); /* For Safari support */
+    
+    /* Optional styling to make the text stand out */
+    color: white;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+    transition: transform 0.3s ease; /* For smooth slide animation */
 }
 
-.Nav-Container .Nav-List {
+.Nav-Container.hidden {
+    transform: translateY(-100%); /* Slide the navbar out of view */
+}
+
+.Nav-Container svg {
+    position: absolute;
+    color: black;
+    width: 2rem;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+/* Rotate the <a> tag when the navbar is hidden */
+.Nav-Container .rotated svg {
+    transform: rotate(-180deg); /* Rotate by 180 degrees */
+}
+
+.Nav-List {
     display: flex;
     justify-content: center;
     align-items: center;
-
     list-style: none;
-
     margin: 0;
     padding: 0;
     gap: 5rem;
-
     color: white;
 }
 
-.Nav-Container .Nav-List li {
+.Nav-List li {
     font-size: 1.5rem;
     font-weight: bold;
     position: relative;
     cursor: pointer;
-
-    /* Smooth transition for hover effect */
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.Nav-Container .Nav-List li:hover {
+.Nav-List li:hover {
     transform: scale(1.2);
-    /* Scale up the item */
     color: rgb(255, 255, 255);
-    /* Change color for better contrast */
 }
 
-/* Add a subtle underline animation starting from the middle */
-.Nav-Container .Nav-List li::after {
+.Nav-List li::after {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -52,30 +75,32 @@
     width: 0;
     height: 2px;
     background-color: white;
-
-    /* Set transform-origin to center for expansion */
     transform-origin: center;
     transition: width 0.3s ease, transform-origin 0.3s ease;
     transform: translateX(-50%);
 }
 
-.Nav-Container .Nav-List li:hover::after {
+.Nav-List li:hover::after {
     width: 100%;
-    /* Expand underline from center */
 }
 
-/* Special styling for the rightmost element */
-.Nav-Container .Nav-List li:last-child::after {
+.Nav-List li:last-child::after {
     left: auto;
-    /* Override left positioning */
     right: 0;
     transform: none;
-    /* No translation needed */
     transform-origin: right;
-    /* Expand from right to left */
 }
 
-.Nav-Container .Nav-List li:last-child:hover::after {
+.Nav-List li:last-child:hover::after {
     width: 100%;
-    /* Expand underline from right */
+}
+
+.Nav-Container svg {
+    position: absolute;
+    color: black;
+    width: 2rem;
+    bottom: 0; /* Positions the SVG at the bottom */
+    right: 0; /* Positions the SVG at the right */
+    margin-bottom: -1.5rem; /* Optional: adds some spacing from the bottom */
+    margin-right: -1.5rem; /* Optional: adds some spacing from the right */
 }

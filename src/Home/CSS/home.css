@@ -1,21 +1,44 @@
-.home-wrapper{
+.home-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100dvw;
-    height: 100dvh;
-
-    box-sizing: border-box;
-}
-
-.home-wrapper .home-intro-container{
-    display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-
-    width: 100dvw;
-    height: 100dvh;
-    gap: 0.5rem;
-}
+  }
+  
+  .sections-container {
+    scroll-snap-type: y mandatory; /* Enables smooth scrolling */
+    height: 100vh;
+  }
+  
+  .section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    scroll-snap-align: start;
+    color: rgb(0, 0, 0);
+    font-size: 3rem;
+  }
+  
+  .section-1 {
+    background-color: #ffffff; /* Tomato */
+  }
+  
+  .section-2 {
+    background-color: #f7f7f7; /* Medium Sea Green */
+  }
+  
+  .section-3 {
+    background-color: #ffffff; /* Dodger Blue */
+  }
+  
+  .section-4 {
+    background-color: #f7f7f7; /* Medium Purple */
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  

@@ -1,0 +1,394 @@
+/* Custom scrollbar styles */
+body, .body2-container, .skill-container {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #00796b #f4f4f4; /* Scrollbar color and track color */
+}
+
+/* Webkit-based browsers (Chrome, Safari, Edge) */
+body::-webkit-scrollbar, .body2-container::-webkit-scrollbar, .skill-container::-webkit-scrollbar {
+    width: 8px; /* Make the scrollbar thinner */
+    height: 8px; /* Make the horizontal scrollbar thinner (if applicable) */
+}
+
+/* Track (background of the scrollbar) */
+body::-webkit-scrollbar-track, .body2-container::-webkit-scrollbar-track, .skill-container::-webkit-scrollbar-track {
+    background: #f4f4f4; /* Light background for the scrollbar track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* Handle (the draggable part of the scrollbar) */
+body::-webkit-scrollbar-thumb, .body2-container::-webkit-scrollbar-thumb, .skill-container::-webkit-scrollbar-thumb {
+    background-color: #00796b; /* Darker color for the scrollbar thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #f4f4f4; /* Light border to give contrast */
+}
+
+/* Hover effect for the thumb */
+body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:hover, .skill-container::-webkit-scrollbar-thumb:hover {
+    background-color: #004d40; /* Darker shade on hover */
+}
+
+
+.body2-container {
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    height: 80dvh;
+}
+
+.body2-container .top-section {
+    width: inherit;
+    height: 30dvh;
+}
+
+.top-section .intro-top {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+}
+
+.intro-top .intro-txt {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 5rem;
+}
+
+/* Shared styles for animations */
+.reveal-h1,
+.reveal-h3 {
+    opacity: 0; /* Initially hidden */
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* H1 slides in from left to right */
+.reveal-h1 {
+    transform: translateX(-50px); /* Start off-screen to the left */
+    animation-name: slide-left-to-right;
+    animation-delay: 1s; /* Animates first */
+}
+
+/* H3 slides in from bottom to top */
+.reveal-h3 {
+    transform: translateY(50px); /* Start off-screen below */
+    animation-name: slide-bottom-to-top;
+    animation-delay: 1.5s; /* Animates after H1 */
+}
+
+/* General styles for the contact button */
+.reveal-button {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(30px); /* Start off-screen to the left */
+    animation: reveal-button-slide-in 1s ease-in-out forwards; /* Apply animation */
+    animation-delay: 2.25s; /* Delay to sync with other elements */
+}
+
+/* Keyframe animation for button sliding in */
+@keyframes reveal-button-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(-25px);
+    }
+}
+
+.reveal-oof {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(30px); /* Start off-screen to the left */
+    animation: reveal-oof-slide-in 1s ease-in-out forwards; /* Apply animation */
+    animation-delay: 2.25s; /* Delay to sync with other elements */
+}
+
+/* Keyframe animation for button sliding in */
+@keyframes reveal-oof-slide-in {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+/* Keyframes for sliding in left to right */
+@keyframes slide-left-to-right {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for sliding in bottom to top */
+@keyframes slide-bottom-to-top {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Styling for text */
+.intro-txt h1 {
+    margin: 0;
+    color: white;
+    font-size: 2.5rem;
+}
+
+.intro-txt h3 {
+    margin: 0;
+    padding-bottom: 3rem;
+    color: rgb(218, 218, 218);
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.intro-txt .contact-me {
+    color: black;
+    background-color: white;
+    border-radius: 30px;
+    height: 3rem;
+    transform: translateY(-2vh);
+}
+
+.intro-top .intro-api {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    padding-right: 5rem;
+    padding-bottom: 3rem;
+    color: white;
+}
+
+.intro-api h1,
+.intro-api h2 {
+    margin: 0;
+}
+
+/* Shared styles for animations */
+.reveal-op-h1,
+.reveal-op-h2 {
+    opacity: 0; /* Initially hidden */
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* H1 slides in from right to left */
+.reveal-op-h1 {
+    transform: translateX(50px); /* Start off-screen to the right */
+    animation-name: slide-right-to-left;
+    animation-delay: 1s; /* Animates first */
+}
+
+/* H2 slides in from bottom to top */
+.reveal-op-h2 {
+    transform: translateY(50px); /* Start off-screen below */
+    animation-name: slide-bottom-to-top;
+    animation-delay: 1.5s; /* Animates after H1 */
+}
+
+/* Keyframes for sliding in right to left */
+@keyframes slide-right-to-left {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Keyframes for sliding in bottom to top */
+@keyframes slide-bottom-to-top {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-api h2 {
+    margin: 0;
+    color: rgb(218, 218, 218);
+}
+
+.online-checker {
+    position: absolute;
+    transform: translate(6rem, -1rem);
+    width: 1vw;
+    height: 1vw;
+    border-radius: 50%;
+    background-color: red;
+    box-shadow: 0px 0px 7px rgb(255, 255, 255);
+}
+
+.body2-container .bottom-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transform: translateY(60vh);
+    animation: slide-bottom-to-top-bottom 1s ease-in-out forwards;
+    animation-delay: 2.25s;
+}
+
+/* Keyframes for sliding in bottom to top */
+@keyframes slide-bottom-to-top-bottom {
+    0% {
+        opacity: 0;
+        transform: translateY(60vh);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bottom-section .proj-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+}
+
+.check-green {
+    color: rgb(0, 255, 0);
+}
+
+.bottom-section .proj-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.Skills-content {
+    width: 100%;
+    height: 100%;
+    padding-top: 0.25rem;
+    background-color: rgb(255, 255, 255);
+}
+
+.Proj-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.about-content {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.skill-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 45vh; /* Adjust height to fit content */
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    gap: 2rem; /* Spacing between skill groups */
+    overflow-y: scroll;
+}
+
+.skill-1 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Auto-fill columns with a minimum width */
+    gap: 2rem; /* Equidistant gap between skill items */
+    width: 90%; /* Ensures the skills fit well within the container */
+    margin-top: 2rem;
+}
+
+.skill-1 .header-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);  /* Only top border */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);  /* Only bottom border */
+    width: 100%;  /* Ensure it takes full width of the skill item */
+    height: 100%;  /* Ensure it takes full height of the skill item */
+    box-sizing: border-box;  /* Ensures padding and border don't affect the overall size */
+    transform: translateY(-1rem);  /* Adjust position as needed */
+
+    color: #333;  /* Dark gray color for a professional, readable text */
+}
+
+/* Skill item container */
+.skill-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #f4f4f4; /* Soft background for skill items */
+    border-radius: 8px; /* Rounded corners for a smoother look */
+    padding: 1rem;
+    min-width: 18rem; /* Ensure the card has a minimum width */
+    max-width: 25rem; /* Ensure the card doesn't get too wide */
+    width: auto; /* Allow the width to be dynamic based on content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for skill items */
+.skill-item:hover {
+    transform: translateY(-8px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+    background-color: #e0f7fa; /* Light, refreshing background color */
+    color: #00796b; /* Subtle color change on hover */
+}
+
+/* Subtle animation for skill item text */
+.skill-item h2,
+.skill-item h4 {
+    transition: transform 0.3s ease;
+    font-size: 1rem; /* Reduced text size for skill item titles */
+}
+
+.skill-item h4 {
+    font-size: 0.85rem; /* Reduced text size for proficiency levels */
+}
+
+.skill-item:hover h2,
+.skill-item:hover h4 {
+    transform: scale(1.05); /* Slight scaling effect for the text */
+}
+
+/* Add a slight background color change to skill items on hover */
+.skill-item:hover .identifier h2 {
+    color: #00796b; /* Darker color for the title on hover */
+}
+
+.skill-item:hover .Prefficiency h4 {
+    color: #004d40; /* Subtle color change for proficiency level */
+}

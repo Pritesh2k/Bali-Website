@@ -1,0 +1,152 @@
+.nav-container-nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100dvw;
+    height: 20dvh;
+}
+
+.nav-left {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 2rem;
+    width: 50dvw;
+    height: 20dvh;
+    padding-left: 2rem;
+
+    opacity: 1; /* Ensure the container is visible */
+}
+
+/* Shared styles for staggered animations */
+.nav-left .item-1, /* Span */
+.nav-left .item-2, /* H1 */
+.nav-left .item-3  /* Div */ {
+    transform: translateX(-25vw); /* Start from the opposite direction (left) */
+    opacity: 0;
+    animation: nav-left-slide-in 1s ease-in-out forwards;
+}
+
+/* Individual animation delays */
+.nav-left .item-1 {
+    animation-delay: 0s; /* Span animates first */
+}
+
+.nav-left .item-2 {
+    animation-delay: 0.2s; /* H1 animates second */
+}
+
+.nav-left .item-3 {
+    animation-delay: 0.4s; /* Div animates last */
+}
+
+/* Animation keyframes */
+@keyframes nav-left-slide-in {
+    0% {
+        transform: translateX(-25vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.nav-left h1{
+    font-family:sans-serif;
+    text-align: center;
+    font-size: 35px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+    text-shadow: rgb(0, 0, 0) 2px 2px 2px;
+}
+
+.account-pp{
+    width: 5vw;
+    height: 5vw;
+
+    border-radius: 50%;
+}
+
+.account-pp img{
+    width: 5vw;
+    height: 5vw;
+
+    border-radius: 50%;
+    object-fit: contain;
+
+    animation: pp-enter 0.75 ease-in-out forwards;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+
+    width: 50dvw;
+    height: 20dvh;
+    padding-right: 2rem;
+
+    /* UPDATE */
+    opacity: 1;
+}
+
+/* Shared styles for button animations */
+.nav-right .button-1,
+.nav-right .button-2,
+.nav-right .button-3 {
+    transform: translateX(25vw);
+    opacity: 0;
+    animation: nav-button-slide-in 1s ease-in-out forwards;
+}
+
+/* Individual animation delays */
+.nav-right .button-1 {
+    animation-delay: 0s; /* Last button animates first */
+}
+
+.nav-right .button-2 {
+    animation-delay: 0.2s; /* Second button animates after the first */
+}
+
+.nav-right .button-3 {
+    animation-delay: 0.4s; /* First button animates last */
+}
+
+/* Animation keyframes */
+@keyframes nav-button-slide-in {
+    0% {
+        transform: translateX(25vw);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+}
+
+
+.nav-right .social-icon{
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+.nav-right .social-icon:hover{
+    transition: 0.1s ease-in-out;
+    border: 1px solid white;
+}
+
+.nav-right .red-outline{
+    color: rgb(153, 0, 0);
+    border: 1px solid rgba(153, 0, 0, 0.575);
+}
+
+.nav-right .red-outline:hover{
+    transition: 0.1s ease-in-out;
+
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+}

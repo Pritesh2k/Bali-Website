@@ -267,7 +267,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(-0.5dvh);
     }
 }
 
@@ -276,11 +276,29 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 10%;
+    height: auto;
+    position: relative;
+    z-index: 5;
+}
+
+.proj-nav-shadow{
+    animation: proj-nav-shadoow-anim 2s ease-in-out forwards;
+    animation-delay: 4s;
+}
+
+@keyframes proj-nav-shadoow-anim{
+    100%{
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
+        0 2px 4px rgba(0, 0, 0, 0.06);
+    }
 }
 
 .check-green {
-    color: rgb(123, 216, 36);
+    color: rgb(134, 134, 134);
+}
+
+.green{
+    color: rgb(0, 165, 0);
 }
 
 .bottom-section .proj-display {
@@ -293,7 +311,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 
 .Skills-content {
     width: 100%;
-    height: 100%;
+    height: 102%;
     padding-top: 0.25rem;
     background-color: rgb(255, 255, 255);
 }
@@ -391,4 +409,11 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 
 .skill-item:hover .Prefficiency h4 {
     color: #004d40; /* Subtle color change for proficiency level */
+}
+
+/* Experience */
+.Proj-content{
+    padding-top: 2rem;
+    overflow-y: scroll;
+    height: 50dvh;
 }

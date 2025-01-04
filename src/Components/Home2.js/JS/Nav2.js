@@ -20,7 +20,7 @@ function Nav2() {
 
             <div className='nav-right'>
                 <Stack spacing={2} direction="row">
-                    <Button className='button-1' variant="contained"><LinkedInIcon /></Button>
+                    <Button className='button-1 social-icon2' variant="contained"><LinkedInIcon /></Button>
                     <Button className='button-2 social-icon' variant="contained"><GitHubIcon /></Button>
                     <Button className='button-3 red-outline' variant="outlined">Portfolio 1.0</Button>
                 </Stack>

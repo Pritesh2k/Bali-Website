@@ -9,6 +9,7 @@ import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 import Skills from "./Skills";
+import Experience from "./Experience";
 
 function Body2() {
     const [dateTime, setDateTime] = useState(new Date());
@@ -83,7 +84,7 @@ function Body2() {
                 </div>
             </div>
             <div className="bottom-section">
-                <div className="proj-nav">
+                <div className="proj-nav proj-nav-shadow">
                     <Box sx={{
                         width: '100%',
                         height: '100%',
@@ -117,7 +118,9 @@ function Body2() {
                     {value === 0 && (
                         <Skills />
                     )}
-                    {value === 1 && <div className='Proj-content'>Content for Item Two</div>}
+                    {value === 1 && <div className='Proj-content'>
+                        <Experience/>
+                    </div>}
                     {value === 2 && <div className='about-content'>Content for Item Three</div>}
                     {value === 3 && <div className='about-content'>Content for Item Four</div>}
                 </div>

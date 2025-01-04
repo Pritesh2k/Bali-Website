@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import '../CSS/body2.css';
 
+import DoneIcon from '@mui/icons-material/Done';
+
 function Skills() {
 
     // Skill category titles
@@ -14,22 +16,23 @@ function Skills() {
         { id: 1, name: "Java", prof: "Advanced" },
         { id: 2, name: "Python", prof: "Advanced" },
         { id: 3, name: "JavaScript", prof: "Intermediate" },
-        { id: 4, name: "C++", prof: "Beginner" },
-        { id: 5, name: "Ruby", prof: "Beginner" },
-        { id: 5, name: "Java", prof: "Advanced" },
-        { id: 6, name: "Python", prof: "Advanced" },
-        { id: 7, name: "JavaScript", prof: "Intermediate" },
-        { id: 8, name: "C++", prof: "Beginner" },
-        { id: 9, name: "Ruby", prof: "Beginner" }
+        { id: 4, name: "React.JS", prof: "Intermediate" },
+        { id: 5, name: "Node.JS", prof: "Intermediate" },
+        { id: 5, name: "HTML & CSS", prof: "Advanced" },
+        { id: 6, name: "CLI", prof: "Intermediate" },
+        { id: 7, name: "GIT", prof: "Intermediate" },
     ];
 
     // Skill items for Professional category
     const professionalSkills = [
-        { id: 1, name: "Project Management", prof: "Advanced" },
+        { id: 1, name: "Project Management", prof: "Intermediate" },
         { id: 2, name: "Team Leadership", prof: "Advanced" },
-        { id: 3, name: "Communication", prof: "Intermediate" },
-        { id: 4, name: "Problem Solving", prof: "Intermediate" },
-        { id: 5, name: "Time Management", prof: "Beginner" }
+        { id: 3, name: "Cybersecurity", prof: "Advanced" },
+        { id: 4, name: "Opperational Resiliency", prof: "Intermediate" },
+        { id: 5, name: "Fraud Investigation", prof: "Intermediate" },
+        { id: 6, name: "Risk Management", prof: "Intermediate" },
+        { id: 7, name: "Vulnerability Management", prof: "Intermediate" },
+        { id: 8, name: "ISO27001: 2022", prof: "Intermediate" },
     ];
 
     return (
@@ -43,13 +46,13 @@ function Skills() {
                         {header.name === "Technical" && technicalSkills.map((item) => (
                             <div className="skill-item" key={item.id}>
                                 <div className="identifier"><h2>{item.name}</h2></div>
-                                <div className="Prefficiency"><h4>{item.prof}</h4></div>
+                                <div className="Prefficiency"><DoneIcon className="green"/></div>
                             </div>
                         ))}
                         {header.name === "Professional" && professionalSkills.map((item) => (
                             <div className="skill-item" key={item.id}>
                                 <div className="identifier"><h2>{item.name}</h2></div>
-                                <div className="Prefficiency"><h4>{item.prof}</h4></div>
+                                <div className="Prefficiency"><DoneIcon className="green"/></div>
                             </div>
                         ))}
                     </div>

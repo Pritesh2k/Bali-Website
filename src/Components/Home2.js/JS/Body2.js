@@ -5,6 +5,7 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import Skills from "./Skills";
 
 function Body2() {
     const [dateTime, setDateTime] = useState(new Date());
@@ -38,35 +39,6 @@ function Body2() {
         return () => clearInterval(interval); // Cleanup on component unmount
     }, []);
 
-    // Skill category titles
-    const skillHeader = [
-        { id: 1, name: "Technical" },
-        { id: 2, name: "Professional" },
-    ];
-
-    // Skill items for Technical category
-    const technicalSkills = [
-        { id: 1, name: "Java", prof: "Advanced" },
-        { id: 2, name: "Python", prof: "Advanced" },
-        { id: 3, name: "JavaScript", prof: "Intermediate" },
-        { id: 4, name: "C++", prof: "Beginner" },
-        { id: 5, name: "Ruby", prof: "Beginner" },
-        { id: 5, name: "Java", prof: "Advanced" },
-        { id: 6, name: "Python", prof: "Advanced" },
-        { id: 7, name: "JavaScript", prof: "Intermediate" },
-        { id: 8, name: "C++", prof: "Beginner" },
-        { id: 9, name: "Ruby", prof: "Beginner" }
-    ];
-
-    // Skill items for Professional category
-    const professionalSkills = [
-        { id: 1, name: "Project Management", prof: "Advanced" },
-        { id: 2, name: "Team Leadership", prof: "Advanced" },
-        { id: 3, name: "Communication", prof: "Intermediate" },
-        { id: 4, name: "Problem Solving", prof: "Intermediate" },
-        { id: 5, name: "Time Management", prof: "Beginner" }
-    ];
-
     return (
         <div className='body2-container'>
             <div className='top-section'>
@@ -94,7 +66,7 @@ function Body2() {
 
                     <div className='intro-api'>
                         <div style={{ textAlign: "right" }}>
-                            <h1 className='reveal-op-h1'> <span className="check-green">Available:</span> Moday to Friday | 9am ~ 5pm</h1>
+                            <h1 className='reveal-op-h1'> <span className="check-green">Available:</span> Moday to Friday | 9am ~ 5pm (GMT)</h1>
                             <h2 className='reveal-op-h2'>{dateTime.toLocaleDateString()}</h2>
                             <h2 className='reveal-op-h2'>{dateTime.toLocaleTimeString()}</h2>
                             <h2 className="reveal-oof" style={{ color: isOnline ? "green" : "red" }}>
@@ -137,29 +109,7 @@ function Body2() {
                 </div>
                 <div className="proj-display">
                     {value === 0 && (
-                        <div className="Skills-content">
-                            <div className="skill-container">
-                                {/* Dynamically create skill categories with items */}
-                                {skillHeader.map((header) => (
-                                    <div className="skill-1" key={header.id}>
-                                        <h2 className="header-title">{header.name}</h2>
-                                        {/* Conditionally map skills based on category */}
-                                        {header.name === "Technical" && technicalSkills.map((item) => (
-                                            <div className="skill-item" key={item.id}>
-                                                <div className="identifier"><h2>{item.name}</h2></div>
-                                                <div className="Prefficiency"><h4>{item.prof}</h4></div>
-                                            </div>
-                                        ))}
-                                        {header.name === "Professional" && professionalSkills.map((item) => (
-                                            <div className="skill-item" key={item.id}>
-                                                <div className="identifier"><h2>{item.name}</h2></div>
-                                                <div className="Prefficiency"><h4>{item.prof}</h4></div>
-                                            </div>
-                                        ))}
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
+                        <Skills/>
                     )}
                     {value === 1 && <div className='Proj-content'>Content for Item Two</div>}
                     {value === 2 && <div className='about-content'>Content for Item Three</div>}

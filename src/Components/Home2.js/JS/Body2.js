@@ -5,6 +5,9 @@ import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import WbSunnyIcon from '@mui/icons-material/WbSunny';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+
 import Skills from "./Skills";
 
 function Body2() {
@@ -48,25 +51,28 @@ function Body2() {
                         <h3 className='reveal-h3'>
                             I enjoy learning how to make functional, aesthetic, and fun web applications!
                         </h3>
-                        <Button className='contact-me reveal-button' variant="contained">
+                        <Button className='contact-me reveal-button' variant="contained" sx={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: '10px 20px',
+                            backgroundColor: isOnline ? 'green' : 'red',
+                            color: 'white',
+                        }}>
                             Contact Me via Email
-                            <span
-                                className="online-checker"
-                                style={{
-                                    marginLeft: "10px",
-                                    width: "15px",
-                                    height: "15px",
-                                    borderRadius: "50%",
-                                    backgroundColor: isOnline ? "green" : "red",
-                                    display: "inline-block",
-                                }}
-                            ></span>
+                            {isOnline ? (
+                                <WbSunnyIcon sx={{ marginLeft: '15px', marginTop: '-2px', color: 'green' }} />
+                            ) : (
+                                <DarkModeIcon sx={{ marginLeft: '15px', marginTop: '-2px', color: 'purple' }} />
+                            )}
                         </Button>
                     </div>
 
                     <div className='intro-api'>
                         <div style={{ textAlign: "right" }}>
-                            <h1 className='reveal-op-h1'> <span className="check-green">Available:</span> Moday to Friday | 9am ~ 5pm (GMT)</h1>
+                            <h1 className='reveal-op-h1'>
+                                <span className="check-green">Available</span> Monday to Friday | 9am ~ 5pm (GMT)
+                            </h1>
                             <h2 className='reveal-op-h2'>{dateTime.toLocaleDateString()}</h2>
                             <h2 className='reveal-op-h2'>{dateTime.toLocaleTimeString()}</h2>
                             <h2 className="reveal-oof" style={{ color: isOnline ? "green" : "red" }}>
@@ -91,11 +97,11 @@ function Body2() {
                             centered
                             sx={{
                                 '& .MuiTab-root': {
-                                    fontSize: '1rem', // Optional: Adjust text size
-                                    textTransform: 'none', // Disable uppercase text transformation
-                                    backgroundColor: 'white', // Default background color for all tabs
-                                    borderRadius: '10px', // Round corners for the tabs
-                                    transition: 'background-color 0.3s ease', // Smooth transition
+                                    fontSize: '1rem',
+                                    textTransform: 'none',
+                                    backgroundColor: 'white',
+                                    borderRadius: '10px',
+                                    transition: 'background-color 0.3s ease',
                                 },
                             }}
                         >
@@ -109,7 +115,7 @@ function Body2() {
                 </div>
                 <div className="proj-display">
                     {value === 0 && (
-                        <Skills/>
+                        <Skills />
                     )}
                     {value === 1 && <div className='Proj-content'>Content for Item Two</div>}
                     {value === 2 && <div className='about-content'>Content for Item Three</div>}

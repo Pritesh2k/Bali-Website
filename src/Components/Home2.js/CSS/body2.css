@@ -105,7 +105,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 
 .reveal-oof {
     opacity: 0; /* Initially hidden */
-    transform: translateX(30px); /* Start off-screen to the left */
+    transform: translateX(40px); /* Start off-screen to the left */
     animation: reveal-oof-slide-in 1s ease-in-out forwards; /* Apply animation */
     animation-delay: 2.25s; /* Delay to sync with other elements */
 }
@@ -114,11 +114,11 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 @keyframes reveal-oof-slide-in {
     0% {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(40px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0px);
+        transform: translateY(25px);
     }
 }
 
@@ -280,7 +280,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 }
 
 .check-green {
-    color: rgb(0, 255, 0);
+    color: rgb(123, 216, 36);
 }
 
 .bottom-section .proj-display {

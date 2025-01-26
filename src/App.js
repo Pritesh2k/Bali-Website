@@ -6,7 +6,7 @@ import Home2 from './Components/Home2.js/JS/Home2';
 function App() {
   return (
     <div className="App">
-      <Home2/>
+      {/* <Home2/> */}
     </div>
   );
 }

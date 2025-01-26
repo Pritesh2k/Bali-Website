@@ -32,7 +32,9 @@ function Skills() {
         { id: 5, name: "Fraud Investigation", prof: "Intermediate" },
         { id: 6, name: "Risk Management", prof: "Intermediate" },
         { id: 7, name: "Vulnerability Management", prof: "Intermediate" },
-        { id: 8, name: "ISO27001: 2022", prof: "Intermediate" },
+        { id: 8, name: "Change Management", prof: "Intermediate" },
+        { id: 9, name: "Impact Management", prof: "Intermediate" },
+        { id: 10, name: "ISO27001: 2022", prof: "Intermediate" },
     ];
 
     return (

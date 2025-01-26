@@ -1,31 +1,51 @@
 /* Custom scrollbar styles */
-body, .body2-container, .skill-container {
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #00796b #f4f4f4; /* Scrollbar color and track color */
+body,
+.body2-container,
+.skill-container {
+    scrollbar-width: thin;
+    /* For Firefox */
+    scrollbar-color: #0066ff #f4f4f4;
+    /* Scrollbar color and track color */
 }
 
 /* Webkit-based browsers (Chrome, Safari, Edge) */
-body::-webkit-scrollbar, .body2-container::-webkit-scrollbar, .skill-container::-webkit-scrollbar {
-    width: 8px; /* Make the scrollbar thinner */
-    height: 8px; /* Make the horizontal scrollbar thinner (if applicable) */
+body::-webkit-scrollbar,
+.body2-container::-webkit-scrollbar,
+.skill-container::-webkit-scrollbar {
+    width: 8px;
+    /* Make the scrollbar thinner */
+    height: 8px;
+    /* Make the horizontal scrollbar thinner (if applicable) */
 }
 
 /* Track (background of the scrollbar) */
-body::-webkit-scrollbar-track, .body2-container::-webkit-scrollbar-track, .skill-container::-webkit-scrollbar-track {
-    background: #f4f4f4; /* Light background for the scrollbar track */
-    border-radius: 10px; /* Rounded corners for the track */
+body::-webkit-scrollbar-track,
+.body2-container::-webkit-scrollbar-track,
+.skill-container::-webkit-scrollbar-track {
+    background: #f4f4f4;
+    /* Light background for the scrollbar track */
+    border-radius: 10px;
+    /* Rounded corners for the track */
 }
 
 /* Handle (the draggable part of the scrollbar) */
-body::-webkit-scrollbar-thumb, .body2-container::-webkit-scrollbar-thumb, .skill-container::-webkit-scrollbar-thumb {
-    background-color: #00796b; /* Darker color for the scrollbar thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-    border: 2px solid #f4f4f4; /* Light border to give contrast */
+body::-webkit-scrollbar-thumb,
+.body2-container::-webkit-scrollbar-thumb,
+.skill-container::-webkit-scrollbar-thumb {
+    background-color: #00796b;
+    /* Darker color for the scrollbar thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+    border: 2px solid #f4f4f4;
+    /* Light border to give contrast */
 }
 
 /* Hover effect for the thumb */
-body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:hover, .skill-container::-webkit-scrollbar-thumb:hover {
-    background-color: #004d40; /* Darker shade on hover */
+body::-webkit-scrollbar-thumb:hover,
+.body2-container::-webkit-scrollbar-thumb:hover,
+.skill-container::-webkit-scrollbar-thumb:hover {
+    background-color: #0066ff;
+    /* Darker shade on hover */
 }
 
 
@@ -34,11 +54,13 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
     flex-direction: column;
     width: 100dvw;
     height: 80dvh;
+
+    overflow-y: auto;
 }
 
 .body2-container .top-section {
     width: inherit;
-    height: 30dvh;
+    height: 25dvh;
 }
 
 .top-section .intro-top {
@@ -63,7 +85,8 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 /* Shared styles for animations */
 .reveal-h1,
 .reveal-h3 {
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
+    /* Initially hidden */
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -71,24 +94,32 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 
 /* H1 slides in from left to right */
 .reveal-h1 {
-    transform: translateX(-50px); /* Start off-screen to the left */
+    transform: translateX(-50px);
+    /* Start off-screen to the left */
     animation-name: slide-left-to-right;
-    animation-delay: 1s; /* Animates first */
+    animation-delay: 1s;
+    /* Animates first */
 }
 
 /* H3 slides in from bottom to top */
 .reveal-h3 {
-    transform: translateY(50px); /* Start off-screen below */
+    transform: translateY(50px);
+    /* Start off-screen below */
     animation-name: slide-bottom-to-top;
-    animation-delay: 1.5s; /* Animates after H1 */
+    animation-delay: 1.5s;
+    /* Animates after H1 */
 }
 
 /* General styles for the contact button */
 .reveal-button {
-    opacity: 0; /* Initially hidden */
-    transform: translateX(30px); /* Start off-screen to the left */
-    animation: reveal-button-slide-in 1s ease-in-out forwards; /* Apply animation */
-    animation-delay: 2.25s; /* Delay to sync with other elements */
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateX(30px);
+    /* Start off-screen to the left */
+    animation: reveal-button-slide-in 1s ease-in-out forwards;
+    /* Apply animation */
+    animation-delay: 2.25s;
+    /* Delay to sync with other elements */
 }
 
 /* Keyframe animation for button sliding in */
@@ -97,6 +128,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateY(25px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(-25px);
@@ -104,10 +136,14 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 }
 
 .reveal-oof {
-    opacity: 0; /* Initially hidden */
-    transform: translateX(40px); /* Start off-screen to the left */
-    animation: reveal-oof-slide-in 1s ease-in-out forwards; /* Apply animation */
-    animation-delay: 2.25s; /* Delay to sync with other elements */
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateX(40px);
+    /* Start off-screen to the left */
+    animation: reveal-oof-slide-in 1s ease-in-out forwards;
+    /* Apply animation */
+    animation-delay: 2.25s;
+    /* Delay to sync with other elements */
 }
 
 /* Keyframe animation for button sliding in */
@@ -116,6 +152,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateY(40px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(25px);
@@ -128,6 +165,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateX(-50px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -140,6 +178,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateY(50px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -188,7 +227,8 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 /* Shared styles for animations */
 .reveal-op-h1,
 .reveal-op-h2 {
-    opacity: 0; /* Initially hidden */
+    opacity: 0;
+    /* Initially hidden */
     animation-duration: 1s;
     animation-timing-function: ease-in-out;
     animation-fill-mode: forwards;
@@ -196,16 +236,20 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
 
 /* H1 slides in from right to left */
 .reveal-op-h1 {
-    transform: translateX(50px); /* Start off-screen to the right */
+    transform: translateX(50px);
+    /* Start off-screen to the right */
     animation-name: slide-right-to-left;
-    animation-delay: 1s; /* Animates first */
+    animation-delay: 1s;
+    /* Animates first */
 }
 
 /* H2 slides in from bottom to top */
 .reveal-op-h2 {
-    transform: translateY(50px); /* Start off-screen below */
+    transform: translateY(50px);
+    /* Start off-screen below */
     animation-name: slide-bottom-to-top;
-    animation-delay: 1.5s; /* Animates after H1 */
+    animation-delay: 1.5s;
+    /* Animates after H1 */
 }
 
 /* Keyframes for sliding in right to left */
@@ -214,6 +258,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateX(50px);
     }
+
     100% {
         opacity: 1;
         transform: translateX(0);
@@ -226,6 +271,7 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
         opacity: 0;
         transform: translateY(50px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -247,173 +293,206 @@ body::-webkit-scrollbar-thumb:hover, .body2-container::-webkit-scrollbar-thumb:h
     box-shadow: 0px 0px 7px rgb(255, 255, 255);
 }
 
-.body2-container .bottom-section {
+
+/* Bottom Section */
+.body2-container .bottom-section{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    height: 100%;
-    transform: translateY(60vh);
-    animation: slide-bottom-to-top-bottom 1s ease-in-out forwards;
-    animation-delay: 2.25s;
+
+    width: 100dvw;
+    height: 75dvh;
+}
+
+.bottom-section ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    transform: translateY(18dvh);
+
+    list-style: none;
+    padding: 0.5rem;
+    gap: 5rem;
+}
+
+.bottom-section li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 6rem;
+    height: 2rem;
+    border-radius: 20px;
+
+    background-color: rgb(255, 255, 255);
+}
+
+.bottom-section .li-1:hover{
+    transition: 0.15s ease-in-out;
+    box-shadow: 0px 0px 5px orangered;
+}
+
+.bottom-section ul li:hover .orange{
+    transition: 0.15s ease-in-out;
+    color: orangered;
+}
+
+.bottom-section .li-2:hover{
+    transition: 0.15s ease-in-out;
+    box-shadow: 0px 0px 5px rgb(0, 184, 0);
+}
+
+.bottom-section ul li:hover .green2{
+    transition: 0.15s ease-in-out;
+    color: rgb(0, 184, 0);
+}
+
+.bottom-section .li-3:hover{
+    transition: 0.15s ease-in-out;
+    box-shadow: 0px 0px 5px rgb(255, 0, 255);
+}
+
+.bottom-section ul li:hover .purple{
+    transition: 0.15s ease-in-out;
+    color: rgb(255, 0, 255);
+}
+
+.bottom-section .li-4:hover{
+    transition: 0.15s ease-in-out;
+    box-shadow: 0px 0px 5px rgb(0, 89, 253);
+}
+
+.bottom-section ul li:hover .blue{
+    transition: 0.15s ease-in-out;
+    color: rgb(0, 89, 253);
+}
+
+.bottom-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100dvw;
+    height: 5vh;
+
+    position: fixed;
+    transform: translateY(-14rem);
+    z-index: 3;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, 0.3);
+
+    background-color: white;
+}
+
+.bottom-header h2{
+    opacity: 0;
+}
+
+.bottom-header h2{
+    animation: slide-bottom-to-top-intro-header 1s ease-in-out forwards;
+    animation-delay: 1s;
 }
 
 /* Keyframes for sliding in bottom to top */
-@keyframes slide-bottom-to-top-bottom {
+@keyframes slide-bottom-to-top-intro-header {
     0% {
         opacity: 0;
-        transform: translateY(60vh);
+        transform: translateY(10px);
     }
+
     100% {
         opacity: 1;
-        transform: translateY(-0.5dvh);
+        transform: translateY(0);
     }
 }
 
-.bottom-section .proj-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto;
-    position: relative;
-    z-index: 5;
-}
-
-.proj-nav-shadow{
-    animation: proj-nav-shadoow-anim 2s ease-in-out forwards;
-    animation-delay: 4s;
-}
-
-@keyframes proj-nav-shadoow-anim{
-    100%{
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 
-        0 2px 4px rgba(0, 0, 0, 0.06);
-    }
-}
-
-.check-green {
-    color: rgb(134, 134, 134);
-}
-
-.green{
-    color: rgb(0, 165, 0);
-}
-
-.bottom-section .proj-display {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-}
-
-.Skills-content {
-    width: 100%;
-    height: 102%;
-    padding-top: 0.25rem;
-    background-color: rgb(255, 255, 255);
-}
-
-.Proj-content {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-}
-
-.about-content {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 255, 255);
-}
-
-.skill-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    height: 45vh; /* Adjust height to fit content */
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    gap: 2rem; /* Spacing between skill groups */
-    overflow-y: scroll;
-}
-
-.skill-1 {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr)); /* Auto-fill columns with a minimum width */
-    gap: 2rem; /* Equidistant gap between skill items */
-    width: 90%; /* Ensures the skills fit well within the container */
-    margin-top: 2rem;
-}
-
-.skill-1 .header-title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);  /* Only top border */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.15);  /* Only bottom border */
-    width: 100%;  /* Ensure it takes full width of the skill item */
-    height: 100%;  /* Ensure it takes full height of the skill item */
-    box-sizing: border-box;  /* Ensures padding and border don't affect the overall size */
-    transform: translateY(-1rem);  /* Adjust position as needed */
-
-    color: #333;  /* Dark gray color for a professional, readable text */
-}
-
-/* Skill item container */
-.skill-item {
+/* Updated layout for the bottom-content section */
+.body2-container .bottom-content {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    background-color: #f4f4f4; /* Soft background for skill items */
-    border-radius: 8px; /* Rounded corners for a smoother look */
+    flex-direction: column; /* Align vertically */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    opacity: 0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    overflow-y: auto;
+    background-color: white;
+
+    animation: slide-bottom-to-top-intro-header 1s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes slide-bottom-to-top-intro-content {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sub-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap */
+    gap: 1rem; /* Add spacing between items */
+    width: 75%; /* Limit width */
+    background-color: #ffffff; /* Background color for the section */
+}
+
+/* Create 2x2 grid for skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-gap: 1rem; /* Space between grid items */
+    width: 100%;
+}
+
+/* Styling for skill items */
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;  /* Make sure it fills the grid cell */
     padding: 1rem;
-    min-width: 18rem; /* Ensure the card has a minimum width */
-    max-width: 25rem; /* Ensure the card doesn't get too wide */
-    width: auto; /* Allow the width to be dynamic based on content */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.158);
+    border-radius: 10px;
+    text-align: center; /* Center text inside the skill items */
+    box-sizing: border-box; /* Include padding and border in the element's width */
 }
 
 /* Hover effect for skill items */
 .skill-item:hover {
-    transform: translateY(-8px); /* Slight lift on hover */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
-    background-color: #e0f7fa; /* Light, refreshing background color */
-    color: #00796b; /* Subtle color change on hover */
+    transition: 0.3s ease-in-out;
+    border: 1px solid rgba(255, 68, 0, 0.301);
 }
 
-/* Subtle animation for skill item text */
-.skill-item h2,
-.skill-item h4 {
-    transition: transform 0.3s ease;
-    font-size: 1rem; /* Reduced text size for skill item titles */
+/* Styling for skill names and proficiency */
+.skill-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
 }
 
-.skill-item h4 {
-    font-size: 0.85rem; /* Reduced text size for proficiency levels */
+.skill-prof {
+    font-size: 1rem;
+    color: #666;
+    font-style: italic;
 }
 
-.skill-item:hover h2,
-.skill-item:hover h4 {
-    transform: scale(1.05); /* Slight scaling effect for the text */
-}
 
-/* Add a slight background color change to skill items on hover */
-.skill-item:hover .identifier h2 {
-    color: #00796b; /* Darker color for the title on hover */
-}
 
-.skill-item:hover .Prefficiency h4 {
-    color: #004d40; /* Subtle color change for proficiency level */
-}
 
-/* Experience */
-.Proj-content{
-    padding-top: 2rem;
-    overflow-y: scroll;
-    height: 50dvh;
-}

@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.home-wrapper-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 100%;
+    min-height: 100vh; /* Ensure at least 100vh height, then can scroll */
+
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the viewport */
+    overflow-x: hidden;
+    
+    font-family: 'Oswald', serif;
+}
+
+.home-wrapper-3 .small-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 100dvw;
+    height: 10dvh;
+
+    text-align: center;
+}
+
+.home-wrapper-3 .small-info .portfolio-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    left: 0rem;
+    top: 0;
+
+    font-size: 1.5rem;
+
+    width: 5dvw;
+    height: 6dvh;
+
+    opacity: 0;
+
+    background-color:#eb4634;
+
+    clip-path: circle(50.1% at 21% 22%);
+    
+    color: white;
+
+    animation: riseUp2 1s ease-out forwards;
+    animation-delay: 2s;
+}
+
+.home-wrapper-3 .small-info .portfolio-1 text{
+    /* Play */
+    transform: translate(-1.25dvw, -0.9dvh); 
+}
+
+.home-wrapper-3 .small-info .location {
+    margin: 0;
+    padding-top: 1rem;
+    font-size: 1.75rem; /* Responsive font size for location */
+    color: rgb(35, 35, 35);
+}
+
+.home-wrapper-3 .small-info .email {
+    margin: 0;
+    font-size: 1.25rem; /* Slightly larger for readability */
+    color: rgba(128, 128, 128, 0.7);
+}
+
+.small-info ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 100%; /* Adjusting height to allow all items to be visible */
+    
+    gap: 1.5rem;
+    list-style: none;
+
+    opacity: 0; /* Start with 0 opacity */
+
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.small-info ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-width: 2dvw;
+    min-height: 2dvw;
+
+    max-width: 4dvw;
+    max-height: 4dvw;
+
+    border-radius: 50%;
+    background-color: white;
+
+    transform: translateY(20px); /* Initial position is slightly below */
+    
+    opacity: 0; /* Start hidden */
+    animation: riseUp 1s ease-out forwards;
+}
+
+/* Stagger the delay for each list item */
+.small-info ul li:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.small-info ul li:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.small-info ul li:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.small-info ul li:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.small-info ul li:nth-child(5) {
+    animation-delay: 1s;
+}
+
+.small-info ul li:nth-child(6) {
+    animation-delay: 1.2s;
+}
+
+.icon-image {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes riseUp {
+    0% {
+        transform: translateY(20px); /* Start from below */
+        opacity: 0; /* Start hidden */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* Become visible */
+    }
+}
+
+@keyframes riseUp2 {
+    0% {
+        transform: translateY(-150px); /* Start from below */
+        opacity: 0; /* Start hidden */
+    }
+    100% {
+        transform: translateY(0); /* End at original position */
+        opacity: 1; /* Become visible */
+    }
+}
+
+.home-wrapper-3 .Hero-interaction {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    animation: hero-int-introOpen 1s ease-in-out forwards;
+    box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.3), inset 0 -10px 15px rgba(0, 0, 0, 0.3);
+    background-color: yellow;
+}
+
+@keyframes hero-int-introOpen {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 50vh;
+    }
+}
+
+.home-wrapper-3 .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    width: 100dvw;
+    height: 15dvh;
+
+    padding: 1rem;
+
+    text-align: center;
+}
+
+.name {
+    font-size: 3.5rem;
+    color: rgb(35, 35, 35);
+}
+
+.prof {
+    height: 10dvh;
+    color: rgba(128, 128, 128, 0.7);
+    font-size: 2rem;
+    background-color: blue;
+}
+
+.prof span {
+    font-weight: bold;
+    color: rgb(35, 35, 35);
+}
+
+.hovered-skill{
+    width: 100dvw;
+    height: 100%;
+
+    background-color: #eb4634;
+}
+
+/* Main Section */
+.main-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+.main-section .main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100dvw;
+    height: 10dvh;
+
+    font-size: 3rem;
+
+    background-color: #eb4634;
+}
+
+.main-section .main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100dvw;
+    height: 90dvh;
+    gap: 2rem;
+
+    font-size: 7rem;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 95dvw;
+    height: 40dvh;
+    border-radius: 30px;
+
+    background-color: aqua;
+}
+
+.card-container .title{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    width: 100%;
+    height: 25%;
+
+    background-color: white;
+}
+
+.card-container .year{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    width: 100%;
+    height: 25%;
+    background-color: white;
+}
+
+.card-container .role{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    width: 100%;
+    height: 25%;
+    background-color: white;
+}
+
+.IGB{
+    background: linear-gradient(324deg, rgba(2,0,36,1) 0%, rgba(0,245,255,1) 0%, rgba(0,61,255,1) 100%);
+}
+
+.TERRA{
+    background: linear-gradient(324deg, rgba(2,0,36,1) 0%, rgb(0, 76, 190) 0%, rgb(66, 255, 98) 100%);
+}
+
+@media (max-width: 1920px) {
+    
+}
